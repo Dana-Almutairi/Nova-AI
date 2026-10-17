@@ -1,0 +1,28 @@
+# Virtual environments
+venv/
+florence_env/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Model cache and downloaded weights
+.cache/
+models/
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Editor and operating system files
+.vscode/
+.DS_Store
+Thumbs.db
+# Previous model experiments
+test_florence.py

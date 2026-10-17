@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Nova AI | مساعد وصف الصور</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <main class="container">
+
+        
+<h1>Nova AI</h1>
+
+<p class="subtitle">
+    مساعد ذكي لوصف الصور صوتيًا باللغة العربية
+</p>
+
+<p class="description">
+    صُمم لمساعدة المكفوفين وضعاف البصر
+    على فهم محتوى الصور بسهولة باستخدام الذكاء الاصطناعي.
+</p>
+
+
+        <p id="instructions">
+            اختر صورة من جهازك، ثم اضغط على زر
+            تحليل الصورة للحصول على وصف باللغة العربية.
+        </p>
+
+        <label for="imageInput">
+            اختر صورة لتحليلها
+        </label>
+
+        <input
+            type="file"
+            id="imageInput"
+            accept="image/*"
+            aria-describedby="instructions"
+        >
+        
+<div id="previewContainer" hidden>
+    <p>معاينة الصورة المختارة:</p>
+    <img
+        id="imagePreview"
+        alt="معاينة الصورة المختارة"
+    >
+</div>
+
+        <button
+            type="button"
+            id="analyzeBtn"
+        >
+            تحليل الصورة
+        </button>
+
+        <h2 id="resultHeading">وصف الصورة</h2>
+
+        <div
+            id="result"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+            aria-labelledby="resultHeading"
+        >
+            سيظهر وصف الصورة هنا
+        </div>
+
+        <button
+            type="button"
+            id="speakBtn"
+            aria-label="استمع إلى وصف الصورة صوتيًا"
+        >
+            استمع للوصف
+        </button>
+        
+<button
+    type="button"
+    id="stopBtn"
+    aria-label="إيقاف قراءة الوصف الصوتي"
+>
+    إيقاف الصوت
+</button>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
